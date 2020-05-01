@@ -3,10 +3,11 @@ package br.com.codenation.calculadora;
 
 public class CalculadoraSalario {
 
-	double descontoInss;
-	double descontoIrrf;
 	double salarioBruto;
 	double salarioLiquido;
+	private double descontoIrrf;
+	private double descontoInss;
+	
 	public long calcularSalarioLiquido(double salarioBase){
 		if(salarioBase < 1039.00){
 			return (long) 0.0;
@@ -16,6 +17,22 @@ public class CalculadoraSalario {
 		}
 		return Math.round(salarioLiquido);
 	}
+
+	//Construtores
+	public double getDescontoInss() {
+		return descontoInss;
+	}
+	public void setDescontoInss(double descontoInss) {
+		this.descontoInss = descontoInss;
+	}
+	public double getDescontoIrrf() {
+		return descontoIrrf;
+	}
+
+	public void setDescontoIrrf(double descontoIrrf) {
+		this.descontoIrrf = descontoIrrf;
+	}
+
 
 	//Método para calcular desconto do INSS
 	public double calculaInss(double salarioBase){
